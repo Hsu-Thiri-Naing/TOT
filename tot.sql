@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 15, 2024 at 07:48 AM
+-- Generation Time: Oct 15, 2024 at 08:27 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -139,6 +139,19 @@ CREATE TABLE `saved_posts` (
   `user_id` int(11) DEFAULT NULL,
   `post_id` int(11) DEFAULT NULL,
   `saved_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `test table 88`
+--
+
+CREATE TABLE `test table 88` (
+  `sfds` int(11) NOT NULL,
+  `fffff` int(11) NOT NULL,
+  `eere` int(11) NOT NULL,
+  `43443` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
