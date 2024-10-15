@@ -1,0 +1,123 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* Light background color */
+    color: #333; /* Dark text color */
+}
+
+/* Header Styles */
+header {
+    background: #333; /* Dark background for header */
+    color: #fff; /* White text color */
+    padding: 15px 20px; /* Padding for header */
+    text-align: center; /* Centered text */
+}
+
+/* Main Container */
+.container {
+    width: 80%;
+    margin: 20px auto; /* Centered container */
+    display: flex; /* Flexbox layout */
+}
+
+/* Sidebar Styles */
+.sidebar {
+    flex: 1; /* Sidebar takes 1 part */
+    background: #fff; /* White background for sidebar */
+    padding: 20px; /* Padding inside sidebar */
+    margin-right: 20px; /* Space between main content and sidebar */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Main Content Area */
+.main {
+    flex: 3; /* Main content takes 3 parts */
+    background: #fff; /* White background for main content */
+    padding: 20px; /* Padding inside the main content */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Table Styles */
+table {
+    width: 100%; /* Full width for tables */
+    border-collapse: collapse; /* Collapse borders */
+    margin-top: 20px; /* Space above the table */
+}
+
+th, td {
+    border: 1px solid #ddd; /* Light border for table cells */
+    padding: 10px; /* Padding for table cells */
+    text-align: left; /* Left-aligned text */
+}
+
+th {
+    background-color: #f2f2f2; /* Light gray background for headers */
+}
+
+/* Form Styles */
+form {
+    margin-top: 20px; /* Space above the form */
+}
+
+label {
+    display: block; /* Block display for labels */
+    margin-bottom: 5px; /* Space below labels */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+    width: 100%; /* Full width for input fields */
+    padding: 10px; /* Padding for input fields */
+    margin-bottom: 15px; /* Space below input fields */
+    border: 1px solid #ccc; /* Light border for input fields */
+    border-radius: 5px; /* Rounded corners */
+}
+
+/* Button Styles */
+button {
+    background-color: #007bff; /* Primary button color */
+    color: white; /* White text color */
+    padding: 10px 15px; /* Padding for button */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background 0.3s ease; /* Smooth background transition */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+/* Footer Styles */
+footer {
+    text-align: center; /* Centered text */
+    padding: 10px 0; /* Padding for footer */
+    background: #333; /* Dark background for footer */
+    color: #fff; /* White text color */
+    position: relative; /* Positioning */
+    bottom: 0; /* Stick to the bottom */
+    width: 100%; /* Full width */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Stack elements vertically */
+    }
+
+    .sidebar {
+        margin-right: 0; /* Remove right margin */
+        margin-bottom: 20px; /* Space below sidebar */
+    }
+}
