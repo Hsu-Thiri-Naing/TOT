@@ -5,7 +5,9 @@
     box-sizing: border-box;
 }
 
-
+::-webkit-scrollbar {
+    display: none; /* Hide scrollbar */
+}
 
 body {
     font-family: 'Poppins', sans-serif;
