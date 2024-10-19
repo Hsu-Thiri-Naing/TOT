@@ -7,13 +7,30 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_post'])) {
     $title = $_POST['title'];
     $content = $_POST['content'];
     $category = $_POST['category'];
+    
+    // Handle image upload
+    $imagePath = null;
+    if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
+        $imageTmpName = $_FILES['image']['tmp_name'];
+        $imageName = basename($_FILES['image']['name']);
+        $imageDir = 'uploads/';
+        $imagePath = $imageDir . time() . '_' . $imageName; // Add timestamp to avoid conflicts
 
-    // Insert the new post into the database
-    $sql = "INSERT INTO posts (title, content, category_id) VALUES (?, ?, ?)";
+        // Move the uploaded file to the desired directory
+        if (move_uploaded_file($imageTmpName, $imagePath)) {
+            // File uploaded successfully
+        } else {
+            echo "Failed to upload image.";
+        }
+    }
+
+    // Insert the new post into the database (including image if uploaded)
+    $sql = "INSERT INTO posts (title, content, category_id, image_path) VALUES (?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("ssi", $title, $content, $category);
+    $stmt->bind_param("ssis", $title, $content, $category, $imagePath);
     $stmt->execute();
 }
+
 
 // Handle post deletion
 if (isset($_GET['delete_post_id'])) {
@@ -52,19 +69,34 @@ $result_users = $conn->query($sql_users);
         <h2>User Management</h2>
 
         <!-- Form to add a new user -->
-        <form method="POST" action="">
-            <h3>Add New User</h3>
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
+        <form method="POST" action="admin.php" enctype="multipart/form-data">
+    <h3>Add New Post</h3>
+    <label for="title">Title:</label>
+    <input type="text" id="title" name="title" required>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+    <label for="content">Content:</label>
+    <textarea id="content" name="content" required></textarea>
 
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
+    <label for="category">Category:</label>
+    <select id="category" name="category" required>
+        <option value="">Select a category</option>
+        <!-- Populate categories from database -->
+        <?php
+        $sql_categories = "SELECT * FROM categories";
+        $result_categories = $conn->query($sql_categories);
+        while ($category = $result_categories->fetch_assoc()) {
+            echo '<option value="' . $category['id'] . '">' . htmlspecialchars($category['name']) . '</option>';
+        }
+        ?>
+    </select>
 
-            <button type="submit" name="add_user">Add User</button>
-        </form>
+    <!-- Image upload field -->
+    <label for="image">Upload Image:</label>
+    <input type="file" name="image" id="image">
+
+    <button type="submit" name="add_post">Add Post</button>
+</form>
+
 
         <!-- Table to display users -->
         <table>
