@@ -337,9 +337,7 @@ footer {
     margin-top: auto;
     text-align: center;
     padding: 10px;
-    background: #12c2e9;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #f64f59, #c471ed, #12c2e9);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #f64f59, #c471ed, #12c2e9); 
+    background: #345c75;
     color: white;
     font-size: 14px;
     border-top: 1px solid #ddd;

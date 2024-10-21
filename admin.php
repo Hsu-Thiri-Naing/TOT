@@ -31,6 +31,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_post'])) {
     $stmt->execute();
 }
 
+if(isset($_POST['add_category'])){
+    $category_name = $_POST['category_name'];
+
+    $sql = "INSERT INTO categories (name) VALUES (?)";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $category_name);
+    $stmt->execute();
+}
+
+//delete category
+if(isset($_GET['delete_category_id'])){
+    $delete_category_id= $_GET['delete_category_id'];
+    $sql = "DELETE FROM categories WHERE id = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("i", $delete_category_id);
+    $stmt->execute();
+}
 
 // Handle post deletion
 if (isset($_GET['delete_post_id'])) {
@@ -68,6 +85,7 @@ $result_users = $conn->query($sql_users);
     <div class="main">
         <h2>User Management</h2>
 
+
         <!-- Form to add a new user -->
         <form method="POST" action="admin.php" enctype="multipart/form-data">
     <h3>Add New Post</h3>
@@ -96,6 +114,39 @@ $result_users = $conn->query($sql_users);
 
     <button type="submit" name="add_post">Add Post</button>
 </form>
+        <h2>Category Management</h2>
+        <h3>Existing Categories</h3>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Actions</th>
+            </tr>
+            <?php
+            $sql_categories = "SELECT * FROM categories";
+            $result_categories = $conn->query($sql_categories);
+            if($result_categories->num_rows > 0){
+                while($category = $result_categories->fetch_assoc()){
+                    echo "<tr>";
+                    echo "<td>" . $category['id'] . "</td>";
+                    echo "<td>" . htmlspecialchars($category['name']) . "</td>";
+                    echo "<td>
+                            <a href='?delete_category_id=" . $category['id'] . "' onclick='return confirm(\"Are you sure you want to delete this category?\");'>Delete</a>
+                            </td>";
+                    echo "</tr>";
+                }
+                
+            }else {
+                echo "<tr><td colspan='3'>No categories found.</td></tr>";
+            }
+            ?>
+        </table>
+        <form action="" method="post">
+            <h2>Add New Category</h2>
+            <label for="category_name">Category Name:</label>
+            <input type="text" name="category_name" id="category_name" required>
+            <button type="submit" name="add_category">Add Category</button>
+        </form>
 
 
         <!-- Table to display users -->
@@ -184,7 +235,7 @@ $result_users = $conn->query($sql_users);
 </div>
 
 <footer>
-    <p>&copy; 2024 Your Website</p>
+    <p>&copy; Trends Of TUM</p>
 </footer>
 
 </body>

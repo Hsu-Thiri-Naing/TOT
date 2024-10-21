@@ -70,7 +70,7 @@ while ($post = $result->fetch_assoc()) {
         
         <div id="comment-box-<?php echo $post['id'] ?>" class="comment-box" style="display: none;">
         <button class="showComments" id="showAll-<?php echo $post['id']; ?>" onclick="toggleComments(<?php echo $post['id']; ?>)">
-        <i class="fa-solid fa-eye"></i>
+        Show Comments
         </button>
         <div class="comments" id="commentList-<?php echo $post['id']; ?>" style="display: none;">
             <?php while ($comment = $commentResult->fetch_assoc()) { ?>

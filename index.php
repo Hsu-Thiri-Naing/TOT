@@ -10,18 +10,19 @@
     <title>Home Page</title>
     <link rel="stylesheet" href="css/glass_style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,800;1,800&display=swap" rel="stylesheet">
     
 
     <script src="https://kit.fontawesome.com/d89d276368.js" crossorigin="anonymous"></script>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
 </head>
 <body>
 
     
     <header>
         <div class="app-logo">
-            <img src="twice_logo.png" width="30" height="30" alt="App Logo">
+            <img src="./assets/tot_logo_orange.png" width="60" height="60" alt="App Logo">
         </div>
        
         <nav>
