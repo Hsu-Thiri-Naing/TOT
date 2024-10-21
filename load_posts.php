@@ -5,7 +5,7 @@ $category = isset($_GET['category']) ? $_GET['category'] : null;
 
 
 // Assuming the user ID is stored in the session
-$user_id = $_SESSION['user_id'];
+$user_id = $_SESSION["id"];
 if ($category) {
     $query = "SELECT * FROM posts WHERE category_id = '$category'";
 } else {

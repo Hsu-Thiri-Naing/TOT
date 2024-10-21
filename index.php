@@ -1,6 +1,5 @@
-
 <?php
-    include 'session_test.php';
+   include 'session_test.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,6 +22,13 @@
     <header>
         <div class="app-logo">
             <img src="./assets/tot_logo_orange.png" width="60" height="60" alt="App Logo">
+        </div>
+
+        <div class="search">
+            <form action="" method="post">
+                <input type="search" placeholder="Type here to search content">
+                <button type="submit" class="img"></button>
+            </form>
         </div>
        
         <nav>
