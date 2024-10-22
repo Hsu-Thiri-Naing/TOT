@@ -22,19 +22,24 @@ body {
   display: flex;
   width: 100px;
   height: 100px;
-  background: cornflowerblue;
+  background:#022b50;
   border-radius: 50%;
   margin: 0 auto 20px auto;
   justify-content: center;
   align-items: center;
 }
 .login-box {
-  background: white;
+  background-image: url('../assets/blue_blur.png'); /* Use your image URL */
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center;
+      background-attachment: fixed;
+      background-color: #f0f0f0;
   padding: 40px;
   border-radius: 20px;
   text-align: center;
   align-items: center;
-  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 .login-box .input-field i {
   position: absolute;
@@ -43,8 +48,8 @@ body {
   font-size: 25px;
 }
 form input::placeholder {
-  color: #000;
-  text-align: center;
+  color: #b19191;
+  text-align: start;
 }
 .login-box .input-field input {
   width: 100%;
@@ -54,29 +59,38 @@ form input::placeholder {
   color: #004e92;
   font-size: 16px;
   padding: 13px 13px 13px 40px;
-  border-radius: 30px;
+  border-radius: 15px;
   background: rgb(152, 220, 243);
   margin: 10px 0;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.719);
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
+
+
+
 form button {
   width: 80%;
   padding: 10px;
-  background: #004e92;
+  background: #022b50;
   border: none;
-  border-radius: 20px;
+  border-radius: 15px;
   color: white;
   font-size: 1.1em;
   cursor: pointer;
   margin-top: 20px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.719);
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  transition: all .3s;
+}
+
+form button:hover{
+  background:#004e92;
 }
 .p {
-  color: #004e92;
+  color: black;
   margin-left: 20px;
 }
 .register {
-  color: black;
+ 
+  color: #004e92;
   text-decoration: none;
 }
 .register:hover {

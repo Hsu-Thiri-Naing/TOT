@@ -17,11 +17,11 @@
           <img src="./assets/tot_square_logo.png" width="80" height="80" alt="">
         </div>
         <div class="input-field">
-          <input type="email" id="em" name="em" placeholder="gmail" required>
+          <input type="email" id="em" name="em" placeholder="Enter you email:" required>
           <i class='bx bx-envelope'></i><br>
         </div>
         <div class="input-field">
-          <input type="password" id="pwd" name="pwd" placeholder="password" required>
+          <input type="password" id="pwd" name="pwd" placeholder="Enter your password:" required>
           <i class='bx bx-lock'></i><br>
         </div>
         <button type="submit">Log In</button>
