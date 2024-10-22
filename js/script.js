@@ -79,7 +79,7 @@ function savePost(postId) {
   xhr.onreadystatechange = function () {
     if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
       // Optionally handle the response
-      alert("Post saved successfully!");
+      
     }
   };
   xhr.send("post_id=" + postId);
