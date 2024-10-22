@@ -32,6 +32,7 @@ $savedPostsResult = $stmt->get_result();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
+    <script src="https://kit.fontawesome.com/d89d276368.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/profile.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,28 +40,33 @@ $savedPostsResult = $stmt->get_result();
 </head>
 <body>
 
-<a href="index.php">Back to Home</a>
 
 <div class="profile-container">
+    <div class="backHome">
+    <a href="index.php"><i class="fa-solid fa-house">  Home</i></a>
+    </div>
     <!-- Profile Picture Section -->
+    <div class="user-details">
     <div class="profile-picture">
         <img src="<?php echo $user['image_path'] ? $user['image_path'] : 'assets/default_user.png'; ?>" alt="Profile Picture">
-        <form action="upload_profile_picture.php" method="POST" enctype="multipart/form-data">
-            <label for="profile-pic-upload" class="upload-btn">Upload New Picture</label>
-            <input type="file" name="profile_picture" id="profile-pic-upload" onchange="this.form.submit()" style="display:none;">
-        </form>
+        
     </div>
 
     <!-- User Info Section -->
     <div class="profile-info">
         <h2><?php echo $user['username']; ?></h2>
         <p>Email: <?php echo $user['email']; ?></p>
+        <form action="upload_profile_picture.php" method="POST" enctype="multipart/form-data">
+            <label for="profile-pic-upload" class="upload-btn">Upload New Picture</label>
+            <input type="file" name="profile_picture" id="profile-pic-upload" onchange="this.form.submit()" style="display:none;">
+        </form>
         <!-- <p>Phone: <?php echo $user['phone']; ?></p> -->
+    </div>
     </div>
 
     <!-- Saved Posts Section -->
     <div class="saved-posts">
-    <h3>Saved Posts</h3>
+    
     <?php if ($savedPostsResult->num_rows > 0) { ?>
         <ul>
             <?php while ($post = $savedPostsResult->fetch_assoc()) { ?>

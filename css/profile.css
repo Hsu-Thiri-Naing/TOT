@@ -4,7 +4,7 @@ body {
   font-weight: 800;
   font-style: normal;
 
-  background: #90e0ef;
+  background: #e0e1dd;
 
   color: #333;
   min-height: 100vh;
@@ -13,14 +13,27 @@ body {
   flex-direction: column;
 }
 
+
 .profile-container {
   width: 50%;
   margin: 50px auto;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
   border-radius: 10px;
 }
+
+.backHome{
+  padding: 5px 10px;
+  border-radius: 15px;
+  color: #222e4e;
+  width: max-content;
+  margin:10px auto;
+  font-size: 16px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+
 
 .profile-picture {
   display: flex;
@@ -36,6 +49,8 @@ body {
   height: 150px;
   object-fit: cover;
   border: 3px solid #ccc;
+  margin-top: 20px;
+  
 }
 
 .upload-btn {
@@ -44,7 +59,7 @@ body {
   background-color: #007bff;
   color: white;
   padding: 8px 16px;
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
   text-align: center;
   text-decoration: none;
@@ -54,12 +69,25 @@ body {
   background-color: #0056b3;
 }
 
+.user-details{
+  padding: 20px;
+  border-radius: 10px;
+  background: #161f38;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
 .profile-info {
-  text-align: center;
+  text-align: left;
+  margin-left: 10%;
 }
 
 .profile-info h2 {
   margin: 0;
+  color: #90e0ef;
   font-size: 24px;
 }
 
@@ -68,13 +96,30 @@ body {
   color: #555;
 }
 
+
+
+.post-content{
+  background: #d2d5db;
+  padding: 5px;
+  border-radius: 5px;
+}
+.post-title{
+  border-bottom:5px solid #161f38;
+  width: 30%;
+  margin: 0 auto;
+  
+  padding: 1px;
+}
+
 .saved-posts {
   margin-top: 20px;
+  
 }
 
 .saved-posts h3 {
   font-size: 20px;
   margin-bottom: 10px;
+  text-align: center;
 }
 
 .saved-posts ul {

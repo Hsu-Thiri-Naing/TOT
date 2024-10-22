@@ -29,12 +29,12 @@ body {
   align-items: center;
 }
 .login-box {
-  background-image: url('../assets/blue_blur.png'); /* Use your image URL */
+  /* background-image: url('../assets/blue_blur.png'); 
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center center;
-      background-attachment: fixed;
-      background-color: #f0f0f0;
+      background-attachment: fixed; */
+      background-color: #ffffff;
   padding: 40px;
   border-radius: 20px;
   text-align: center;
