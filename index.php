@@ -27,12 +27,21 @@ include 'session_test.php';
         </div>
 
         <div class="search">
+<<<<<<< HEAD
         <form action="" method="post">
                 <input type="search" placeholder="Type here to search content">
+=======
+            <form id="search-form" method="GET" action="index.php">
+                <input type="search" id="search-input" name="search" placeholder="Type here to search content">
+>>>>>>> bf4618410d8996f8071affe69bb3eb2769474dcf
                 <button type="submit" class="img"></button>
             </form>
         </div>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> bf4618410d8996f8071affe69bb3eb2769474dcf
         <nav>
             <a href="index.php">Home</a>
             <a href="profile.php">Profile</a>
@@ -53,10 +62,21 @@ include 'session_test.php';
 
 
         <section class="post-feed" id="post-feed">
+<<<<<<< HEAD
         <?php include( 'load_posts.php'); ?>
         </section>
 
 
+=======
+            <?php
+            $search = isset($_GET['search']) ? $_GET['search'] : '';
+            include('load_posts.php');
+            ?>
+        </section>
+
+
+
+>>>>>>> bf4618410d8996f8071affe69bb3eb2769474dcf
         <aside class="registered-users">
             <h2>Registered Users: <span id="user-count"><?php include('user_count.php'); ?></span></h2>
             <div class="user-list">
