@@ -80,12 +80,17 @@ while ($post = $result->fetch_assoc()) {
                     <div class="comment">
                         <strong><?php echo $comment['username']; ?>:</strong>
                         <p><?php echo $comment['content']; ?></p>
-                        <small><?php echo $comment['created_at']; ?></small>
+                        <small><?php echo simple_time_ago($comment['created_at']) ?></small>
                     </div>
                 <?php } ?>
             </div>
+            
+           
+            <div class="buttonContainer">
             <textarea id="comment-<?php echo $post['id'] ?>" placeholder="Enter your comment..."></textarea>
             <button onclick="commentPost(<?php echo $post['id'] ?>)"><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+        
         </div>
     </article>
 <?php }
