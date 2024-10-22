@@ -13,9 +13,7 @@
   <div class="container">
     <form id="loginForm" action="check.php" method="post" onsubmit="return validateForm()">
       <div class="login-box">
-        <div class="A1">
-          <img src="./assets/tot_square_logo.png" width="80" height="80" alt="">
-        </div>
+        <div class="A1"></div>
         <div class="input-field">
           <input type="email" id="em" name="em" placeholder="gmail" required>
           <i class='bx bx-envelope'></i><br>

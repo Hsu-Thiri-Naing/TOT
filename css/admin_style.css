@@ -1,123 +1,195 @@
 /* Basic Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 /* Body and Global Styles */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4; /* Light background color */
-    color: #333; /* Dark text color */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f2f5; /* Slightly lighter background */
+  color: #444; /* Softer text color for better readability */
+  line-height: 1.6;
 }
 
 /* Header Styles */
 header {
-    background: #333; /* Dark background for header */
-    color: #fff; /* White text color */
-    padding: 15px 20px; /* Padding for header */
-    text-align: center; /* Centered text */
+  background: #345c75; /* Primary blue */
+  color: #fff; /* White text for contrast */
+  padding: 20px;
+  text-align: center;
+  font-size: 24px; /* Larger font size for heading */
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
 /* Main Container */
 .container {
-    width: 80%;
-    margin: 20px auto; /* Centered container */
-    display: flex; /* Flexbox layout */
+  width: 90%;
+  max-width: 1200px; /* Limit max-width for better readability */
+  margin: 40px auto; /* Centered with space above */
+  display: flex;
+  gap: 20px; /* Gap between sidebar and main content */
 }
 
 /* Sidebar Styles */
 .sidebar {
-    flex: 1; /* Sidebar takes 1 part */
-    background: #fff; /* White background for sidebar */
-    padding: 20px; /* Padding inside sidebar */
-    margin-right: 20px; /* Space between main content and sidebar */
-    border-radius: 5px; /* Rounded corners */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  flex: 1;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Main Content Area */
 .main {
-    flex: 3; /* Main content takes 3 parts */
-    background: #fff; /* White background for main content */
-    padding: 20px; /* Padding inside the main content */
-    border-radius: 5px; /* Rounded corners */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  flex: 3;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Table Styles */
-table {
-    width: 100%; /* Full width for tables */
-    border-collapse: collapse; /* Collapse borders */
-    margin-top: 20px; /* Space above the table */
-}
-
-th, td {
-    border: 1px solid #ddd; /* Light border for table cells */
-    padding: 10px; /* Padding for table cells */
-    text-align: left; /* Left-aligned text */
-}
-
-th {
-    background-color: #f2f2f2; /* Light gray background for headers */
+/* Headings in Main Content */
+.main h2 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #007bff; /* Add a nice underlined heading */
+  padding-bottom: 10px;
+  color: #333; /* Darker heading color */
 }
 
 /* Form Styles */
 form {
-    margin-top: 20px; /* Space above the form */
+  margin-top: 20px;
+  background: #f9f9f9; /* Light gray background for form */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Softer shadow for forms */
 }
 
 label {
-    display: block; /* Block display for labels */
-    margin-bottom: 5px; /* Space below labels */
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #555;
 }
 
 input[type="text"],
 input[type="email"],
 input[type="password"],
-select {
-    width: 100%; /* Full width for input fields */
-    padding: 10px; /* Padding for input fields */
-    margin-bottom: 15px; /* Space below input fields */
-    border: 1px solid #ccc; /* Light border for input fields */
-    border-radius: 5px; /* Rounded corners */
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  background-color: #f5f5f5; /* Subtle background for inputs */
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+select:focus,
+textarea:focus {
+  border-color: #345c75; /* Focused state with primary color */
+  outline: none;
+  background-color: #fff; /* White background on focus */
 }
 
 /* Button Styles */
 button {
-    background-color: #007bff; /* Primary button color */
-    color: white; /* White text color */
-    padding: 10px 15px; /* Padding for button */
-    border: none; /* No border */
-    border-radius: 5px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: background 0.3s ease; /* Smooth background transition */
+  background-color: #345c75;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow to the button */
 }
 
 button:hover {
-    background-color: #0056b3; /* Darker shade on hover */
+  background-color: #0056b3;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Add a stronger shadow on hover */
+}
+
+/* Table Styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+th {
+  background-color: #345c75;
+  color: white;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+td {
+  background-color: #fafafa;
+}
+
+tr:hover {
+  background-color: #f1f1f1; /* Highlight row on hover */
+}
+
+/* Links within the table (e.g., Edit/Delete) */
+a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 /* Footer Styles */
 footer {
-    text-align: center; /* Centered text */
-    padding: 10px 0; /* Padding for footer */
-    background: #333; /* Dark background for footer */
-    color: #fff; /* White text color */
-    position: relative; /* Positioning */
-    bottom: 0; /* Stick to the bottom */
-    width: 100%; /* Full width */
+  text-align: center;
+  padding: 15px 0;
+  background: #345c75;
+  color: #fff;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  margin-top: 20px;
 }
 
 /* Responsive Styles */
 @media (max-width: 768px) {
-    .container {
-        flex-direction: column; /* Stack elements vertically */
-    }
+  .container {
+    flex-direction: column;
+    padding: 0 10px;
+  }
 
-    .sidebar {
-        margin-right: 0; /* Remove right margin */
-        margin-bottom: 20px; /* Space below sidebar */
-    }
+  header {
+    font-size: 20px; /* Slightly smaller header on mobile */
+  }
+
+  button {
+    width: 100%; /* Full-width buttons on smaller screens */
+    margin-bottom: 15px;
+  }
+
+  table,
+  th,
+  td {
+    font-size: 14px; /* Adjust table font size for mobile */
+  }
 }
