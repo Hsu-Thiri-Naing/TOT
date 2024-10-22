@@ -46,7 +46,7 @@ while ($post = $result->fetch_assoc()) {
                 <h3><?php echo $post['title'] ?></h3>
             </div>
             <div class="close-btn" onclick="hidePost(<?php echo $post['id']; ?>)">
-            <i class="fa-solid fa-circle-xmark"></i>
+                <img src="Close.png" width="30" height="30" alt="Close">
             </div>
         </div>
         <div class="posted-time" style="color :#71797E; margin-top : 5px; margin-left: 5px">
