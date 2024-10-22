@@ -20,7 +20,9 @@ if ($category) {
 
 $result = $conn->query($query);
 if(!$result->num_rows > 0){
-    echo '<div class="dialog-box">Search result does not match!</div>';
+    echo "<script>
+     alert( 'No results for your search topic..' );
+    </script>";
 }
 
 // The rest of the post rendering logic remains the same...
