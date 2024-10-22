@@ -27,11 +27,12 @@ include 'session_test.php';
         </div>
 
         <div class="search">
-            <form action="" method="post">
-                <input type="search" placeholder="Type here to search content">
+            <form id="search-form" method="GET" action="index.php">
+                <input type="search" id="search-input" name="search" placeholder="Type here to search content">
                 <button type="submit" class="img"></button>
             </form>
         </div>
+
 
         <nav>
             <a href="index.php">Home</a>
@@ -53,8 +54,12 @@ include 'session_test.php';
 
 
         <section class="post-feed" id="post-feed">
-            <?php include('load_posts.php'); ?>
+            <?php
+            $search = isset($_GET['search']) ? $_GET['search'] : '';
+            include('load_posts.php');
+            ?>
         </section>
+
 
 
         <aside class="registered-users">
