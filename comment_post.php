@@ -40,4 +40,3 @@ if ($post_id && $user_id && $comment) {
 }
 
 $conn->close();
-?>

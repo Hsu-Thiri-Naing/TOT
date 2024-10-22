@@ -1,82 +1,84 @@
-*{
-    margin: 0;
-    padding: 15px;
-    box-sizing: border-box;
-    font-family: Arial,sans_serif;
-    }
-    body{
-    height: 90vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background:#CFDEF3;
-    }
-    .container{
-    display: flex;
-    justify-content: center;
-    
-    height: 100%;
-    width: 100%;
-    }
-    .A1{
-    width: 100px;
-    height: 100px;
-    background:cornflowerblue;
-    border-radius: 50%;
-    margin: 0 auto 20px auto;
-    }
-    .login-box{
-    background:white;
-    padding: 40px;
-    border-radius: 20px;
-    text-align: center;
-    align-items: center;
-    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
-    }
-    .login-box .input-field i{
-    position: absolute;
-    right: +55%;
-    transform: translateY(+10%);
-    font-size: 25px;
-    }
-    form input::placeholder{
-    color:#000;
-    text-align: center;
-    }
-    .login-box .input-field input{
-    width: 100%;
-    height: 100%;
-    border: 3px solid rgb(152, 220, 243);
-    outline: none;
-    color:#004e92;
-    font-size: 16px;
-    padding: 13px 13px 13px 40px;
-    border-radius: 30px;
-    background:rgb(152, 220, 243);
-    margin: 10px 0;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.719);
-    }
-    form button{
-    width: 80%;
-    padding: 10px;
-    background: #004e92;
-    border: none;
-    border-radius: 20px;
-    color: white;
-    font-size: 1.1em;
-    cursor: pointer;
-    margin-top: 20px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.719);
-    }
-    .p{
-        color: #004e92;
-        margin-left: 20px;
-        }
-    .register{
-        color: black;
-        text-decoration: none;
-       
-    }
-    .register:hover{
-    text-decoration: underline;
-    }
+* {
+  margin: 0;
+  padding: 15px;
+  box-sizing: border-box;
+  font-family: Arial, sans_serif;
+}
+body {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #cfdef3;
+}
+.container {
+  display: flex;
+  justify-content: center;
+
+  height: 100%;
+  width: 100%;
+}
+.A1 {
+  display: flex;
+  width: 100px;
+  height: 100px;
+  background: cornflowerblue;
+  border-radius: 50%;
+  margin: 0 auto 20px auto;
+  justify-content: center;
+  align-items: center;
+}
+.login-box {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  align-items: center;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+.login-box .input-field i {
+  position: absolute;
+  right: +55%;
+  transform: translateY(+10%);
+  font-size: 25px;
+}
+form input::placeholder {
+  color: #000;
+  text-align: center;
+}
+.login-box .input-field input {
+  width: 100%;
+  height: 100%;
+  border: 3px solid rgb(152, 220, 243);
+  outline: none;
+  color: #004e92;
+  font-size: 16px;
+  padding: 13px 13px 13px 40px;
+  border-radius: 30px;
+  background: rgb(152, 220, 243);
+  margin: 10px 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.719);
+}
+form button {
+  width: 80%;
+  padding: 10px;
+  background: #004e92;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  font-size: 1.1em;
+  cursor: pointer;
+  margin-top: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.719);
+}
+.p {
+  color: #004e92;
+  margin-left: 20px;
+}
+.register {
+  color: black;
+  text-decoration: none;
+}
+.register:hover {
+  text-decoration: underline;
+}

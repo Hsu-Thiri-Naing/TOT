@@ -5,7 +5,7 @@ $category = isset($_GET['category']) ? $_GET['category'] : null;
 
 
 // Assuming the user ID is stored in the session
-$user_id = $_SESSION["id"];
+$user_id = $_SESSION["user_id"];
 if ($category) {
     $query = "SELECT * FROM posts WHERE category_id = '$category'";
 } else {
@@ -29,14 +29,14 @@ while ($post = $result->fetch_assoc()) {
                     ORDER BY c.created_at ASC";
     $commentResult = $conn->query($commentQuery);
 ?>
-    <article class="post" id="post-<?php echo $post['id']?>">
+    <article class="post" id="post-<?php echo $post['id'] ?>">
         <div class="post-header">
             <div class="post-title">
                 <h3><?php echo $post['title'] ?></h3>
             </div>
             <div class="close-btn" onclick="hidePost(<?php echo $post['id']; ?>)">
-            <img src="Close.png" width="30" height="30" alt="Close">
-        </div>
+                <img src="Close.png" width="30" height="30" alt="Close">
+            </div>
 
 
             <!-- <p>Posted by <?php echo $post['author'] ?> on <?php echo $post['date'] ?></p> -->
@@ -53,38 +53,39 @@ while ($post = $result->fetch_assoc()) {
         <?php } ?>
 
 
-        <div class="post-content"><?php echo $post['content'] ?></div>
-        <div class="post-actions">
-            <!-- Like button with thumbs-up icon -->
-            <button id="like-button-<?php echo $post['id'] ?>" class="<?php echo $isLiked ? 'liked' : 'not-liked'; ?>" onclick="likePost(<?php echo $post['id'] ?>)">
-                <i class="fa <?php echo $isLiked ? 'fa-thumbs-up' : 'fa-thumbs-o-up'; ?>"></i>
-                <span id="like-count-<?php echo $post['id'] ?>"><?php echo $post['likes'] ?></span>
-            </button>
+        <div class=" post-content"><?php echo $post['content'] ?>
+            </div>
+            <div class="post-actions">
+                <!-- Like button with thumbs-up icon -->
+                <button id="like-button-<?php echo $post['id'] ?>" class="<?php echo $isLiked ? 'liked' : 'not-liked'; ?>" onclick="likePost(<?php echo $post['id'] ?>)">
+                    <i class="fa <?php echo $isLiked ? 'fa-thumbs-up' : 'fa-thumbs-o-up'; ?>"></i>
+                    <span id="like-count-<?php echo $post['id'] ?>"><?php echo $post['likes'] ?></span>
+                </button>
 
 
-            <button onclick="savePost(<?php echo $post['id'] ?>)">Save</button>
-            <button onclick="toggleCommentBox(<?php echo $post['id'] ?>)">Comment</button>
+                <button onclick="savePost(<?php echo $post['id'] ?>)">Save</button>
+                <button onclick="toggleCommentBox(<?php echo $post['id'] ?>)">Comment</button>
 
 
-        </div>
-        
-        <div id="comment-box-<?php echo $post['id'] ?>" class="comment-box" style="display: none;">
-        <button class="showComments" id="showAll-<?php echo $post['id']; ?>" onclick="toggleComments(<?php echo $post['id']; ?>)">
-        Show Comments
-        </button>
-        <div class="comments" id="commentList-<?php echo $post['id']; ?>" style="display: none;">
-            <?php while ($comment = $commentResult->fetch_assoc()) { ?>
-                <div class="comment">
-                    <strong><?php echo $comment['username']; ?>:</strong>
-                    <p><?php echo $comment['content']; ?></p>
-                    <small><?php echo $comment['created_at']; ?></small>
+            </div>
+
+            <div id="comment-box-<?php echo $post['id'] ?>" class="comment-box" style="display: none;">
+                <button class="showComments" id="showAll-<?php echo $post['id']; ?>" onclick="toggleComments(<?php echo $post['id']; ?>)">
+                    Show Comments
+                </button>
+                <div class="comments" id="commentList-<?php echo $post['id']; ?>" style="display: none;">
+                    <?php while ($comment = $commentResult->fetch_assoc()) { ?>
+                        <div class="comment">
+                            <strong><?php echo $comment['username']; ?>:</strong>
+                            <p><?php echo $comment['content']; ?></p>
+                            <small><?php echo $comment['created_at']; ?></small>
+                        </div>
+                    <?php } ?>
                 </div>
-            <?php } ?>
-        </div>
-            <textarea id="comment-<?php echo $post['id'] ?>" placeholder="Enter your comment..."></textarea>
-            <button onclick="commentPost(<?php echo $post['id'] ?>)"><i class="fa-solid fa-paper-plane"></i></button>
-        </div>
-        
+                <textarea id="comment-<?php echo $post['id'] ?>" placeholder="Enter your comment..."></textarea>
+                <button onclick="commentPost(<?php echo $post['id'] ?>)"><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+
     </article>
 
 <?php }

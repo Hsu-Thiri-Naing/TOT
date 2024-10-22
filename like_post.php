@@ -48,7 +48,6 @@ if ($result->num_rows > 0) {
 
     // Respond with success and the updated like count
     echo json_encode(['success' => true, 'liked' => false, 'newLikeCount' => $newLikeCount]);
-
 } else {
     // Like the post: insert a new entry in the likes table and increment the like count
     $stmt = $conn->prepare("INSERT INTO likes (user_id, post_id) VALUES (?, ?)");
@@ -74,4 +73,3 @@ if ($result->num_rows > 0) {
 // Close the prepared statement and connection
 $stmt->close();
 $conn->close();
-?>

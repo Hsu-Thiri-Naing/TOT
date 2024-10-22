@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $title = $_POST['title'];
     $content = $_POST['content'];
     $category = $_POST['category'];
-    
+
     // Check if an image has been uploaded
     if ($_FILES['image']['name']) {
         $imageName = $_FILES['image']['name'];
@@ -54,48 +54,51 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Post</title>
     <link rel="stylesheet" href="css/admin_style.css">
 </head>
+
 <body>
 
-<header>
-    <h1>Edit Post</h1>
-</header>
+    <header>
+        <h1>Edit Post</h1>
+    </header>
 
-<div class="container">
-    <form method="POST" enctype="multipart/form-data">
-        <label for="title">Title:</label>
-        <input type="text" id="title" name="title" value="<?php echo htmlspecialchars($post['title']); ?>" required>
+    <div class="container">
+        <form method="POST" enctype="multipart/form-data">
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" value="<?php echo htmlspecialchars($post['title']); ?>" required>
 
-        <label for="content">Content:</label>
-        <textarea id="content" name="content" required><?php echo htmlspecialchars($post['content']); ?></textarea>
+            <label for="content">Content:</label>
+            <textarea id="content" name="content" required><?php echo htmlspecialchars($post['content']); ?></textarea>
 
-        <label for="category">Category:</label>
-        <select id="category" name="category" required>
-            <?php
-            $sql_categories = "SELECT * FROM categories";
-            $result_categories = $conn->query($sql_categories);
-            while ($category = $result_categories->fetch_assoc()) {
-                $selected = ($category['id'] == $post['category_id']) ? 'selected' : '';
-                echo '<option value="' . $category['id'] . '" ' . $selected . '>' . htmlspecialchars($category['name']) . '</option>';
-            }
-            ?>
-        </select>
+            <label for="category">Category:</label>
+            <select id="category" name="category" required>
+                <?php
+                $sql_categories = "SELECT * FROM categories";
+                $result_categories = $conn->query($sql_categories);
+                while ($category = $result_categories->fetch_assoc()) {
+                    $selected = ($category['id'] == $post['category_id']) ? 'selected' : '';
+                    echo '<option value="' . $category['id'] . '" ' . $selected . '>' . htmlspecialchars($category['name']) . '</option>';
+                }
+                ?>
+            </select>
 
-        <label for="image">Image:</label>
-        <input type="file" id="image" name="image">
-        <p>Current image: <?php echo htmlspecialchars($post['image_path']); ?></p>
-        <img src="<?php echo htmlspecialchars($post['image_path']); ?>" alt="Post Image" style="max-width: 300px; display: block; margin-top: 10px;">
+            <label for="image">Image:</label>
+            <input type="file" id="image" name="image">
+            <p>Current image: <?php echo htmlspecialchars($post['image_path']); ?></p>
+            <img src="<?php echo htmlspecialchars($post['image_path']); ?>" alt="Post Image" style="max-width: 300px; display: block; margin-top: 10px;">
 
-        <button type="submit">Update Post</button>
-    </form>
-</div>
+            <button type="submit">Update Post</button>
+        </form>
+    </div>
 
 </body>
+
 </html>
 
 <?php
