@@ -27,7 +27,7 @@
 </head>
 <body>
 <div class="wrapper">
-<div class="avatar"></div>
+<div class="avatar"> <img src="./assets/tot_square_logo.png" width="80" height="80" alt=""></div>
 <div class="input-box">
 <form action="register_get_data.php" method="post" onsubmit="return validateForm()">
 
@@ -49,6 +49,7 @@
 </div>
 
 <button type="submit" class="btn">Register</button>
+<div class="p">Don't have an account?<a href="register.php" class="register">Register Now</a></div>
 </form>
 
 </div>

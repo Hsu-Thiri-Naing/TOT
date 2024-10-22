@@ -35,7 +35,12 @@ box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
   border-radius: 50%;
   margin: 0 auto 20px auto;
   justify-content: center;
-  align-items: center; */
+  align-items: center; 
+}
+
+.avatar img{
+  width: 50px;
+  height: 50px;
 }
 
 .input-box {
@@ -66,7 +71,7 @@ box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
 .input-field input::placeholder {
-  color: black; /* Placeholder color */
+  color: #b19191;; /* Placeholder color */
 }
 
 .input-field i {
@@ -97,4 +102,18 @@ box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 
 .btn:hover {
   background: #00376b; /* Darker shade on hover */
+}
+
+.p {
+  color: black;
+  font-size: 14px;
+  margin: 20px;
+}
+.register {
+  margin-left: 5px;
+  color: #004e92;
+  text-decoration: none;
+}
+.register:hover {
+  text-decoration: underline;
 }
