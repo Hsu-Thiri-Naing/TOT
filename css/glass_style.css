@@ -224,11 +224,8 @@ main {
 
   /* padding: 10px 15px;
     background: #90e0ef; */
-<<<<<<< HEAD
   color: white;
-=======
     color: #161f38;
->>>>>>> bf4618410d8996f8071affe69bb3eb2769474dcf
   display: block;
   border-radius: 5px;
   transition: transform 0.2s;
@@ -238,10 +235,7 @@ main {
 .categories a:hover {
   transform: translateY(-3px);
   background: #161f38;
-<<<<<<< HEAD
-=======
   color: #ccc;
->>>>>>> bf4618410d8996f8071affe69bb3eb2769474dcf
   opacity: 0.9;
   transition: 0.3s;
 }
@@ -455,8 +449,6 @@ main {
         padding: 3px 5px;
   } */
 
-<<<<<<< HEAD
-=======
 .user-list{
   padding: 5px 5px;
   max-height: 70%;
@@ -469,7 +461,6 @@ main {
   border: 1px solid rgba(0, 119, 182, 0.3);
 }
 
->>>>>>> bf4618410d8996f8071affe69bb3eb2769474dcf
 .user-list .user-container {
   background: rgba(0, 119, 182, 0.3);
   border-radius: 10px;
@@ -517,14 +508,11 @@ footer {
   gap: 10px;
 }
 
-<<<<<<< HEAD
-=======
 .showComments{
   margin: 10px 0;
   
 }
 
->>>>>>> bf4618410d8996f8071affe69bb3eb2769474dcf
 .comment-box {
   display: none;
   background-color: #f9f9f9;
@@ -533,11 +521,8 @@ footer {
   border-radius: 5px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   margin-top: 10px;
-<<<<<<< HEAD
 
-=======
   
->>>>>>> bf4618410d8996f8071affe69bb3eb2769474dcf
   z-index: 1000000;
   width: 100%;
 }
@@ -553,14 +538,11 @@ footer {
 }
 
 .comment-box button {
-<<<<<<< HEAD
   background: #642b73;
   background: -webkit-linear-gradient(to right, #c6426e, #642b73);
   background: linear-gradient(to right, #c6426e, #642b73);
-=======
   background: #212f54;
  
->>>>>>> bf4618410d8996f8071affe69bb3eb2769474dcf
   color: white;
   border: none;
   padding: 10px;
@@ -572,8 +554,6 @@ footer {
     rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
-<<<<<<< HEAD
-=======
 .buttonContainer{
   display: flex;
   
@@ -592,7 +572,6 @@ footer {
 }
 
 
->>>>>>> bf4618410d8996f8071affe69bb3eb2769474dcf
 .comments {
   display: none;
   margin-top: 10px;
@@ -680,8 +659,6 @@ button:hover {
     display: none;
   }
 }
-<<<<<<< HEAD
-=======
 
 .dialog-box{
   
@@ -697,4 +674,3 @@ button:hover {
   margin-top: 80px;
 
 }
->>>>>>> bf4618410d8996f8071affe69bb3eb2769474dcf
