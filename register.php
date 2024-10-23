@@ -28,6 +28,14 @@
 </head>
 
 <body>
+<?php
+if (isset($_GET['message'])) {
+    $message = $_GET['message'];
+    $type = $_GET['type'];
+    echo "<div class='$type' id='msgBox'>$message Try again.</br><small>Click to close the box</small></div>";
+}
+?>
+
     <div class="wrapper">
         <div class="avatar"> <img src="./assets/tot_square_logo.png" width="80" height="80" alt=""></div>
         <div class="input-box">
@@ -56,6 +64,23 @@
 
         </div>
     </div>
+
+    <script>
+    // Wait for the DOM to load
+    document.addEventListener("DOMContentLoaded", function() {
+        // Get the message box element by its ID
+        var msgBox = document.getElementById('msgBox');
+
+        // Check if the message box exists before adding the event listener
+        if (msgBox) {
+            // Add a click event listener to the message box
+            msgBox.addEventListener('click', function() {
+                // Hide the message box when clicked
+                msgBox.style.display = 'none';
+            });
+        }
+    });
+</script>
 </body>
 
 </html>

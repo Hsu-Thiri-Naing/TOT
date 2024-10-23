@@ -12,6 +12,8 @@ function toggleCommentBox(postId) {
     commentBox.style.display === "none" ? "block" : "none";
 }
 
+
+
 function toggleComments(postId) {
   const commentList = document.getElementById("commentList-" + postId);
   const showCommentsButton = document.getElementById("showAll-" + postId);

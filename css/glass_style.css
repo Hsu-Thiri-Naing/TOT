@@ -50,6 +50,33 @@ footer:hover,
 .registered-users:hover {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
+.success{
+  /* From https://css.glass */
+/* From https://css.glass */
+background: rgba(243, 240, 47, 0.941);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(253, 21, 57, 0.1);
+padding: 20px;
+width: 400px;
+margin-top: 150px;
+position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+color: rgb(34, 24, 63);
+z-index: 1000000;
+text-align: center;
+transition: .5s;
+}
+
+.success:hover{
+  filter: brightness(1.2);
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
 
 header {
   display: flex;
@@ -113,7 +140,10 @@ header nav a:hover {
   background: #fff;
   border-radius: 30px;
   align-items: center;
-  margin-left: 130px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
 }

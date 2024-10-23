@@ -18,10 +18,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (password_verify($password, $hashed_psw)) {
             session_start();
             $_SESSION["user_id"] = $id;
-            echo "<script> 
-            alert('Login successful!');
-            window.location.href='index.php';
-            </script>";
+            // echo "<script> 
+            // alert('Login successful!');
+            // window.location.href='index.php';
+            // </script>";
+            header("location:index.php?message=Successfully+Logged In!&type=success");
         } else {
             echo "<script> 
             alert('Invalid password.') 

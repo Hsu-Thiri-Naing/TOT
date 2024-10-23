@@ -10,6 +10,14 @@
 </head>
 
 <body>
+<?php
+if (isset($_GET['message'])) {
+    $message = $_GET['message'];
+    $type = $_GET['type'];
+    echo "<div class='$type' id='msgBox'><b>$message</b></br>
+    <p>Please Log  to continue</p></br><small>Click the box to close</small></div>";
+}
+?>
   <div class="container">
     <form id="loginForm" action="check.php" method="post" onsubmit="return validateForm()">
       <div class="login-box">
@@ -29,14 +37,21 @@
       <div class="p">Don't have an account?<a href="register.php" class="register">Register Now</a></div>
     </form>
     <script>
-      //  function validateForm(){
-      //   const EMAIL=document.getElementById("em").value;
-      //   const PASSWORD=document.getElementById("pwd").value;
+      
+    // Wait for the DOM to load
+    document.addEventListener("DOMContentLoaded", function() {
+        // Get the message box element by its ID
+        var msgBox = document.getElementById('msgBox');
 
-      //   if(!EMAIL || !PASSWORD ){
-      //    alert("Please fill in both fields.");
-      //    return false;
-      //   }
-      //   return true;}
+        // Check if the message box exists before adding the event listener
+        if (msgBox) {
+            // Add a click event listener to the message box
+            msgBox.addEventListener('click', function() {
+                // Hide the message box when clicked
+                msgBox.style.display = 'none';
+            });
+        }
+    });
+</script>
     </script>
 </body>
