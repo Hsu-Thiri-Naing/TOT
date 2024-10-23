@@ -4,7 +4,12 @@ include 'db_config.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['em'];
     $password =  $_POST['pwd'];
-
+    if ($email === "totadmin2024@gmail.com" && $password === "5webwizards") {
+        session_start();
+        $_SESSION["admin_id"] = 'admin';  // Assign an identifier for the admin user
+        header("location:admin.php?message=Welcome+Admin!&type=success");
+        exit();
+    }
     $query = $conn->prepare("SELECT email, password, id FROM users
                               WHERE email = ?");
     $query->bind_param("s", $email);

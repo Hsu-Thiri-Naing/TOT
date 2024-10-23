@@ -20,9 +20,7 @@ if ($category) {
 
 $result = $conn->query($query);
 if(!$result->num_rows > 0){
-    echo "<script>
-     alert( 'No results for your search topic..' );
-    </script>";
+    echo "<div class='dialog-box'>No search results found!!.</div>";
 }
 
 // The rest of the post rendering logic remains the same...
@@ -78,13 +76,17 @@ while ($post = $result->fetch_assoc()) {
                 Show Comments
             </button>
             <div class="comments" id="commentList-<?php echo $post['id']; ?>" style="display: none;">
-                <?php while ($comment = $commentResult->fetch_assoc()) { ?>
+                <?php 
+                if (!$commentResult->num_rows > 0){
+                    echo "<i>No comments here</i>";
+                } else {
+                while ($comment = $commentResult->fetch_assoc()) { ?>
                     <div class="comment">
-                        <strong><?php echo $comment['username']; ?>:</strong>
+                        <p><?php echo $comment['username']; ?>:</p>
                         <p><?php echo $comment['content']; ?></p>
                         <small><?php echo simple_time_ago($comment['created_at']) ?></small>
                     </div>
-                <?php } ?>
+                <?php }} ?>
             </div>
             
            

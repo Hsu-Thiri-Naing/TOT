@@ -1,6 +1,12 @@
 <?php
 // Include the database configuration file
 include 'db_config.php';
+session_start();
+
+if (!isset($_SESSION['admin_id'])) {
+    header("location: login.php");
+}
+$logged_in_user_id = $_SESSION['user_id'];
 
 // Handle form submission for adding a new post
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_post'])) {
@@ -58,6 +64,22 @@ if (isset($_GET['delete_post_id'])) {
     $stmt->execute();
 }
 
+if (isset($_GET['delete_user_id'])) {
+    $delete_user_id = $_GET['delete_user_id'];
+
+    // First, delete all comments by this user
+    $sql_comments = "DELETE FROM comments WHERE user_id = ?";
+    $stmt_comments = $conn->prepare($sql_comments);
+    $stmt_comments->bind_param("i", $delete_user_id);
+    $stmt_comments->execute();
+
+    // Then, delete the user
+    $sql = "DELETE FROM users WHERE id = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("i", $delete_user_id);
+    $stmt->execute();
+}
+
 // Fetch posts from the database
 $sql = "SELECT p.id, p.title, p.content, c.name AS category FROM posts p JOIN categories c ON p.category_id = c.id";
 $result_posts = $conn->query($sql);
@@ -85,7 +107,7 @@ $result_users = $conn->query($sql_users);
 
     <div class="container">
         <div class="main">
-            <h2>User Management</h2>
+            <h2>Post Management</h2>
 
 
             <!-- Form to add a new user -->
@@ -165,8 +187,12 @@ $result_users = $conn->query($sql_users);
                             <td><?php echo htmlspecialchars($row['username']); ?></td>
                             <td><?php echo htmlspecialchars($row['email']); ?></td>
                             <td>
-                                <a href="edit_user.php?id=<?php echo $row['id']; ?>">Edit</a> |
-                                <a href="?delete_id=<?php echo $row['id']; ?>" onclick="return confirm('Are you sure you want to delete this user?');">Delete</a>
+                                <!-- <a href="edit_user.php?id=<?php echo $row['id']; ?>">Edit</a> | -->
+                                <?php if ($row['id'] == $logged_in_user_id): ?>
+                                    <span style="color: gray;">Delete</span>
+                                <?php else: ?>
+                                    <a href="?delete_user_id=<?php echo $row['id']; ?>" onclick="return confirm('Are you sure you want to delete this user?');">Delete</a>
+                                <?php endif; ?>
                             </td>
                         </tr>
                     <?php endwhile; ?>
